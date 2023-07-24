@@ -4,7 +4,7 @@ const uuid = require('./helpers/uuid');
 const fs = require('fs');
 
 const { readFromFile, readAndAppend, readAndDelete } = require('./helpers/fsUtils');
-var port = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 const app = express();
 
