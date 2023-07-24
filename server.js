@@ -13,10 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to serve up static assets from the public folder
-app.use(express.static('public'));
+app.use(express.static('./'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+  res.sendFile(path.join(__dirname, '/notes.html'))
 );
 
 app.get('/api/notes', (req, res) => {
@@ -54,7 +54,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.get('/*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+  res.sendFile(path.join(__dirname, '/index.html'))
 );
 
 app.delete('/api/notes/:id', (req, res) =>{
